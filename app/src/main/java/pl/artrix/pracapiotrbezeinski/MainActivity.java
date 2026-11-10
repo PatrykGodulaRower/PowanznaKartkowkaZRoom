@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
 
 public class MainActivity extends AppCompatActivity {
+    kinematografiaDataBase kinematografiaDataBase1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+       kinematografiaDataBase1 = Room.databaseBuilder(
+                getApplicationContext(),
+                kinematografiaDataBase.class,
+                "kine_db"
+        ).allowMainThreadQueries().build();
+
+       kinematografiaDataBase1.zwrockinematografiaDAO().wstawDoBazyKine(
+               new kinematografia("mroczny rycerz",2008,"akcja")
+       );
     }
 
 
