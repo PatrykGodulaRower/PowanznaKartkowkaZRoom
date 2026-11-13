@@ -5,5 +5,5 @@ import androidx.room.RoomDatabase;
 
 @Database(entities = {kinematografia.class}, version = 1)
 public  abstract class kinematografiaDataBase extends RoomDatabase{
-    public abstract kinematografiaDAO zwrockinematografiaDAO();
+    public abstract  kinematografiaDAO zwrockinematografiaDAO();
 }

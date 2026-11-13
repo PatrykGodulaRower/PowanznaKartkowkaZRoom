@@ -54,4 +54,12 @@ public class kinematografia{
     public void setKategoria(String kategoria) {
         this.kategoria = kategoria;
     }
+
+    @Override
+    public String toString() {
+        return ", tytul='" + tytul + '\'' +
+                ", rokProdukcji=" + rokProdukcji +
+                ", kategoria='" + kategoria + '\'' +
+                '}';
+    }
 }
